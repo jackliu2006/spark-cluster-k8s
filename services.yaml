@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: sparkmasternodeport
+spec:
+  type: NodePort
+  ports:
+    - name: web
+      port: 8080
+      protocol: TCP
+      targetPort: web
+      nodePort: 31814
+    - name: spark
+      port: 7077
+      protocol: TCP
+      targetPort: spark
+      nodePort: 31845
+    - name: rest
+      port: 6066
+      protocol: TCP
+      targetPort: rest
+      nodePort: 31414
+  selector:
+    spark-role: master

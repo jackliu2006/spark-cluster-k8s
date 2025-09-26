@@ -1,0 +1,9 @@
+namespace: spark
+labels:
+  - pairs:
+      app: spark-cluster
+      env: dev
+
+resources:
+  - ./cluster-hpa.yaml
+  - ./services.yaml
